@@ -75,7 +75,7 @@ public class WelcomeController{
         if(selected.equals("date")){
             processBuilder.command("bash","-c","date +%D");
         }else if(selected.equals("time")){
-            processBuilder.command("bash","-c","Time");
+            processBuilder.command("bash","-c","time");
         }else if(selected.equals("list")){
             processBuilder.command("bash","-c","ls");
         }else{
@@ -90,6 +90,7 @@ public class WelcomeController{
         String line;
         while ((line = reader.readLine()) != null) {
             output.append(line + "\n");
+            System.out.println("Output in progress : "+output);
         }
         System.out.println("Output : "+output);
         return output.toString();
